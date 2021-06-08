@@ -7,4 +7,5 @@
 
 (
     REGISTRATION,
-) = range(1)
+    NAME,
+) = range(2)

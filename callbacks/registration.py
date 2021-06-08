@@ -1,7 +1,7 @@
 from telegram.ext import InlineQueryHandler, callbackqueryhandler, CallbackContext, Updater
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
-from texts import greeting, request_name_text
-from selector import cursor, connect
+from static.texts import *
+from database.selector import cursor, connect, lang
 
 
 def request_language(update, context):
@@ -38,4 +38,7 @@ def button(update: Update, _: CallbackContext) -> None:
     connect.commit()
 
 def request_name(update, context):
-    update.message.reply_text(request)
+    update.message.reply_text(request_name_txt[lang(update)])
+
+def accept_name(update, context):
+    update.message.reply_text(accept_name_txt[lang(update)])

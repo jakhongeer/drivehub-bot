@@ -2,14 +2,16 @@ from telegram.ext import (Updater,
                           CommandHandler,
                           MessageHandler,
                           ConversationHandler,
-                          CallbackQueryHandler)
-from registration import request_language
+                          CallbackQueryHandler,
+                          Filters)
+from callbacks.registration import request_language
 import time
 import logging
 from keys import API_TOKEN
-from registration import request_language, button
-from constants import *
-from selector import *
+from callbacks.registration import request_language, button, request_name, accept_name
+from static.constants import *
+from database.selector import *
+
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.DEBUG)
@@ -45,10 +47,9 @@ def main():
 
     registration_conversation = ConversationHandler(
         entry_points=[CallbackQueryHandler(callback=button)],
+
         states={
-
         },
-
         fallbacks=[
 
         ],
