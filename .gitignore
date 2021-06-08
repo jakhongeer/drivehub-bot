@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 # Directories
 venv/
+.vscode/
 
 # Files
 keys.py
