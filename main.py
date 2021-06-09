@@ -10,6 +10,8 @@ import logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                      level=logging.DEBUG)
 
+# just a commit ;)
+
 
 def start_command(update, context):
     context.bot.send_message(chat_id=update.effective_user.id, text="Hi r u ready to start?")
